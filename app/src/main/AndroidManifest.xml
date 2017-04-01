@@ -21,6 +21,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".DashBoardActivity"
+
             android:parentActivityName=".HomeActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -31,6 +32,9 @@
             android:parentActivityName=".HomeActivity"
             android:theme="@style/AppTheme.NoActionBar"
             />
+
+
+
         <activity
             android:name=".Splash"
             android:theme="@style/AppTheme.NoActionBar">
@@ -40,9 +44,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".LoginActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+
+        <activity android:name=".StartOpenSource" />
+        <activity android:name=".SelectDifficulty"></activity>
+
     </application>
 
 </manifest>
