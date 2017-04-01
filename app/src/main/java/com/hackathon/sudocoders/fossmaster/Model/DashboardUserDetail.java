@@ -14,7 +14,7 @@ public class DashboardUserDetail {
     @SerializedName("user_name")
     String user_name;
 
-    @SerializedName("user_image_url")
+    @SerializedName("user_img_url")
     String user_image_url;
 
     @SerializedName("repo_name")

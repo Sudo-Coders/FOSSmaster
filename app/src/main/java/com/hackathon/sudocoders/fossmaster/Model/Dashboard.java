@@ -17,9 +17,9 @@ public class Dashboard {
     private boolean msg;
 
     @SerializedName("dashboard")
-    private ArrayList<Dashboard> feed;
+    private ArrayList<DashboardUserDetail> feed;
 
-    public Dashboard(boolean success, boolean msg, ArrayList<Dashboard> feed) {
+    public Dashboard(boolean success, boolean msg, ArrayList<DashboardUserDetail> feed) {
         this.success = success;
         this.msg = msg;
         this.feed = feed;
@@ -33,7 +33,7 @@ public class Dashboard {
         return msg;
     }
 
-    public ArrayList<Dashboard> getFeed() {
+    public ArrayList<DashboardUserDetail> getFeed() {
         return feed;
     }
 
@@ -45,7 +45,7 @@ public class Dashboard {
         this.msg = msg;
     }
 
-    public void setFeed(ArrayList<Dashboard> feed) {
+    public void setFeed(ArrayList<DashboardUserDetail> feed) {
         this.feed = feed;
     }
 }

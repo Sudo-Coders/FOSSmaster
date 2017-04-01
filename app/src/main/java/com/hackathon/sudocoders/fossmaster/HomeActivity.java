@@ -14,6 +14,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.hackathon.sudocoders.fossmaster.Model.StarredRepos;
+
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -33,6 +35,33 @@ public class HomeActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
+
+
+    public void getFeed(View v){
+
+        startActivity(new Intent(HomeActivity.this,DashBoardActivity.class));
+    }
+
+    public void getMyrepo(View v){
+
+        startActivity(new Intent(HomeActivity.this,MyRepositories.class));
+    }
+
+    public void getMypr(View v){
+
+
+    }
+
+    public void getStars(View v){
+
+        startActivity(new Intent(HomeActivity.this,StarredReposActivity.class));
+    }
+
+    public void startOS(View v){
+
+
+    }
+
 
     @Override
     public void onBackPressed() {
@@ -73,13 +102,13 @@ public class HomeActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_feed) {
-            // Handle the camera action
+            startActivity(new Intent(HomeActivity.this,DashBoardActivity.class));
         } else if (id == R.id.nav_repo) {
             startActivity(new Intent(HomeActivity.this, MyRepositories.class));
         } else if (id == R.id.nav_pr) {
 
         } else if (id == R.id.nav_star) {
-
+            startActivity(new Intent(HomeActivity.this, StarredReposActivity.class));
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_feedback) {

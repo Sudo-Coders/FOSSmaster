@@ -9,9 +9,11 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.hackathon.sudocoders.fossmaster.Adapter.DashboardAdapter;
 import com.hackathon.sudocoders.fossmaster.Adapter.MyreposAdapter;
+import com.hackathon.sudocoders.fossmaster.Model.DashboardUserDetail;
 import com.hackathon.sudocoders.fossmaster.Model.MyRepo;
-import com.hackathon.sudocoders.fossmaster.Model.MyRepo2;
+import com.hackathon.sudocoders.fossmaster.Model.Dashboard;
 import com.hackathon.sudocoders.fossmaster.Utils.ApiInterface;
 import com.hackathon.sudocoders.fossmaster.Utils.Util;
 
@@ -29,11 +31,11 @@ public class DashBoardActivity extends AppCompatActivity {
     private LinearLayoutManager layoutManager;
     private Toolbar toolbar;
     ProgressBar progressBar;
-    private ArrayList<MyRepo> users;
+    private ArrayList<DashboardUserDetail> users;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dashboard);
+        setContentView(R.layout.activity_repos);
 
         progressBar = (ProgressBar) findViewById(R.id.leader_progress);
 
@@ -47,31 +49,31 @@ public class DashBoardActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
+        getSupportActionBar().setTitle("Dashboard activity");
         layoutManager = new LinearLayoutManager(getApplicationContext());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
 
-        adapter = new MyreposAdapter(users,getApplicationContext());
+
         recyclerView.setLayoutManager(layoutManager);
         progressBar.setVisibility(View.VISIBLE);
-        getStarredRepos();
+        getDashboard();
 
 
     }
 
 
-    public void getStarredRepos(){
+    public void getDashboard(){
         ApiInterface mApi = Util.getRetrofitService();
-        Call<MyRepo2> mservice = mApi.getStarredRepos();
-        mservice.enqueue(new Callback<MyRepo2>() {
+        Call<Dashboard> mservice = mApi.getDashboard();
+        mservice.enqueue(new Callback<Dashboard>() {
 
             @Override
-            public void onResponse(Call<MyRepo2> call, Response<MyRepo2> response) {
+            public void onResponse(Call<Dashboard> call, Response<Dashboard> response) {
                 if(response!=null && response.isSuccess()) {
-                    users = response.body().getUsers();
+                    users = response.body().getFeed();
 
                     progressBar.setVisibility(View.GONE);
-                    adapter = new MyreposAdapter(users, getApplicationContext());
+                    adapter = new DashboardAdapter(users, getApplicationContext());
 
                     recyclerView.setAdapter(adapter);
 
@@ -83,7 +85,7 @@ public class DashBoardActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<MyRepo2> call, Throwable t) {
+            public void onFailure(Call<Dashboard> call, Throwable t) {
                 Toast.makeText(getApplicationContext(), "Please check your network connection and internet permission", Toast.LENGTH_LONG).show();
                 progressBar.setVisibility(View.GONE);
             }
