@@ -59,7 +59,7 @@ public class HomeActivity extends AppCompatActivity
 
     public void startOS(View v){
 
-
+        startActivity(new Intent(HomeActivity.this,StartOpenSource.class));
     }
 
 
