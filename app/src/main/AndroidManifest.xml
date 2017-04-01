@@ -21,8 +21,8 @@
         <activity android:name=".DashBoardActivity" />
         
 
-        <activity android:name=".StarredReposActivity" />
 
+        <activity android:name=".StarredReposActivity" />
 
 
         <activity
