@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_feed"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Current Feed" />
+        <item
+            android:id="@+id/nav_repo"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="My Repositories" />
+        <item
+            android:id="@+id/nav_pr"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="My Pull Requests" />
+        <item
+            android:id="@+id/nav_star"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Starred Repos" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_feedback"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Feedback" />
+            <item
+                android:id="@+id/nav_contact"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Contact Us" />
+        </menu>
+    </item>
+
+
+    <item android:title="Other">
+        <menu>
+            <item
+                android:id="@+id/nav_settings"
+                android:icon="@android:drawable/ic_menu_preferences"
+                android:title="Settings" />
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@android:drawable/ic_menu_preferences"
+                android:title="About App" />
+            <item
+                android:id="@+id/nav_team"
+                android:icon="@android:drawable/ic_menu_preferences"
+                android:title="Contributors" />
+        </menu>
+    </item>
+</menu>
