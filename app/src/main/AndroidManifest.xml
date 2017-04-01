@@ -19,8 +19,6 @@
 
 
         <activity android:name=".DashBoardActivity" />
-        
-
 
         <activity android:name=".StarredReposActivity" />
 
@@ -39,7 +37,6 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
 
     </application>
 
