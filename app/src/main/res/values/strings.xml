@@ -6,4 +6,17 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <string name="AboutFossmaster">
+        FOSSmaster lets user to access github for open source projects. It contains a
+        "Dashboard" section which shows repositeries of user followers and the repositeries
+        which are starred by user. "My Repositeries" section shows all projects on which user
+        had worked and is currently working upon. "Starred Repositeries" section lists all the
+        projects on which user may wish to work upon in future. "Open Source Contribution" section
+        initially makes user to select their level as beginner, medium or expert. According to the
+        selection of level, app chooses repos on which user can contribute and it is increased
+        each time user makes 5 commits. Therefore the app helps user to increase their knowledge
+        about contribution in open source projects and prepare them for higher competitions.
+
+    </string>
 </resources>
