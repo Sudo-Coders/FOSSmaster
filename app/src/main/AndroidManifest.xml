@@ -19,6 +19,11 @@
 
 
         <activity android:name=".DashBoardActivity" />
+        
+
+        <activity android:name=".StarredReposActivity" />
+
+
 
         <activity
             android:name=".MyRepositories"
@@ -26,8 +31,6 @@
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
 
-
-        <activity android:name=".StarredReposActivity" />
 
         <activity android:name=".Splash"
             android:theme="@style/AppTheme.NoActionBar">
