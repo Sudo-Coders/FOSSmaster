@@ -20,7 +20,9 @@
 
         <activity android:name=".DashBoardActivity" />
 
+
         <activity android:name=".StarredReposActivity" />
+
 
 
         <activity
