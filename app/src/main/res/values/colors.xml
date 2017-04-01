@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#2196f3</color>
+    <color name="colorPrimaryDark">#1976d2</color>
+    <color name="colorAccent">#ffca8d</color>
+
+
+    <!-- Colors for diff. languages -->
+    <color name="java">#b07219</color>
+    <color name="c">#555555</color>
+    <color name="ruby">#701516</color>
+    <color name="javascript">#f1e05a</color>
+    <color name="swift">#ffac45</color>
+    <color name="objective_c">#438eff</color>
+    <color name="c_plus_plus">#f34b7d</color>
+    <color name="python">#3572A5</color>
+    <color name="c_sharp">#178600</color>
+    <color name="html">#e44b23</color>
+
+
+
+
+
 </resources>
