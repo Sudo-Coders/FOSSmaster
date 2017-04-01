@@ -14,7 +14,7 @@
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MyRepositories"
             android:parentActivityName=".HomeActivity"
@@ -27,6 +27,10 @@
             android:name=".StarredReposActivity"
             android:parentActivityName=".HomeActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".AboutUSActivity"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
         <activity
             android:name=".Splash"
             android:theme="@style/AppTheme.NoActionBar">
@@ -36,9 +40,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
