@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.hackathon.sudocoders.fossmaster.Model.StarredRepos;
+import com.hackathon.sudocoders.fossmaster.Utils.SharedPref;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -58,8 +59,13 @@ public class HomeActivity extends AppCompatActivity
     }
 
     public void startOS(View v){
-
-        startActivity(new Intent(HomeActivity.this,StartOpenSource.class));
+        SharedPref sharedPref = new SharedPref(getApplicationContext());
+        if(!sharedPref.getopensourceStatus()) {
+            startActivity(new Intent(HomeActivity.this, StartOpenSource.class));
+        }
+        else{
+            startActivity(new Intent(HomeActivity.this,OpenSourceActivity.class));
+        }
     }
 
 

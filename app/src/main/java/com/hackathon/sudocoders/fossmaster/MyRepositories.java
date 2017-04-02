@@ -13,6 +13,7 @@ import com.hackathon.sudocoders.fossmaster.Adapter.MyreposAdapter;
 import com.hackathon.sudocoders.fossmaster.Model.MyRepo;
 import com.hackathon.sudocoders.fossmaster.Model.MyRepo2;
 import com.hackathon.sudocoders.fossmaster.Utils.ApiInterface;
+import com.hackathon.sudocoders.fossmaster.Utils.SharedPref;
 import com.hackathon.sudocoders.fossmaster.Utils.Util;
 
 import java.util.ArrayList;
@@ -34,6 +35,7 @@ public class MyRepositories extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_repos);
         progressBar = (ProgressBar) findViewById(R.id.leader_progress);
+        SharedPref sharedPref = new SharedPref(getApplicationContext());
 
 
         recyclerView = (RecyclerView) findViewById(R.id.repo_recycler);
@@ -50,16 +52,16 @@ public class MyRepositories extends AppCompatActivity {
         adapter = new MyreposAdapter(users, getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
         progressBar.setVisibility(View.VISIBLE);
-        getMyRepo();
+        getMyRepo(sharedPref.getUserName());
 
 
 
     }
 
-    public void getMyRepo(){
+    public void getMyRepo(String username){
 
         ApiInterface mApi = Util.getRetrofitService();
-        Call<MyRepo2> mservice = mApi.getMyRepo();
+        Call<MyRepo2> mservice = mApi.getMyRepo(username);
         System.out.println("help me");
         mservice.enqueue(new Callback<MyRepo2>() {
 

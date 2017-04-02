@@ -39,35 +39,36 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text=" JavaScript" />
+            android:text=" Javascript" />
 
-        <RadioButton
-            android:id="@+id/radioCsharp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text=" C# (C sharp)" />
+
 
         <RadioButton
             android:id="@+id/radioCpp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text=" C/C++" />
+            android:text="cpp" />
+          <RadioButton
+              android:id="@+id/radioC"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:text="C" />
 
         <RadioButton
             android:id="@+id/radioPython"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text=" Python" />
+            android:text="Python" />
 
         <RadioButton
-            android:id="@+id/radioObjC"
+            android:id="@+id/radioCss"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text=" Objective C" />
+            android:text="css" />
 
         <RadioButton
             android:id="@+id/radioHTML"
@@ -81,14 +82,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text=" Ruby" />
+            android:text="ruby" />
 
         <RadioButton
             android:id="@+id/radioSwift"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text=" Swift" />
+            android:text="swift" />
+
+          <RadioButton
+              android:id="@+id/radioShell"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:text="shell" />
 
         </RadioGroup>
 

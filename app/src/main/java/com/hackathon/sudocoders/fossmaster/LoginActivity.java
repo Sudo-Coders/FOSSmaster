@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.hackathon.sudocoders.fossmaster.Model.LoginModel;
 import com.hackathon.sudocoders.fossmaster.Utils.ApiInterface;
+import com.hackathon.sudocoders.fossmaster.Utils.SharedPref;
 import com.hackathon.sudocoders.fossmaster.Utils.Util;
 
 import retrofit2.Call;
@@ -24,6 +25,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText editPass;
     private Button loginBtn;
     private ProgressBar progressBar;
+     String uname=null;
 
     
     @Override
@@ -36,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
         editUsername = (EditText) findViewById(R.id.editUsername);
         progressBar = (ProgressBar) findViewById(R.id.progress);
 
-        
+
         loginBtn = (Button) findViewById(R.id.loginBtn);
         
     }
@@ -47,7 +49,9 @@ public class LoginActivity extends AppCompatActivity {
         editPass.setVisibility(View.GONE);
         loginBtn.setVisibility(View.GONE);
         progressBar.setVisibility(View.VISIBLE);
-        getLoginModel(editUsername.toString(),editPass.toString());
+        uname = editUsername.toString();
+        System.out.println("hello wor "  + uname + "hell");
+        getLoginModel(editUsername.getText().toString(),editPass.getText().toString());
 
 
     }
@@ -65,7 +69,9 @@ public class LoginActivity extends AppCompatActivity {
                     if(response!=null && response.isSuccess()) {
 
                         String username = response.body().getUsername();
-                        System.out.println(username);
+                        SharedPref sp = new  SharedPref(getApplicationContext());
+                        sp.setLoginStatus(true);
+                        sp.setUserName(response.body().getUsername());
                         progressBar.setVisibility(View.GONE);
                         startActivity(new Intent(LoginActivity.this, HomeActivity.class));
 
@@ -73,6 +79,9 @@ public class LoginActivity extends AppCompatActivity {
                     else{
                         Toast.makeText(LoginActivity.this, "Some Problem is there", Toast.LENGTH_SHORT).show();
                         progressBar.setVisibility(View.GONE);
+                        editUsername.setVisibility(View.GONE);
+                        editPass.setVisibility(View.GONE);
+                        loginBtn.setVisibility(View.GONE);
                     }
                 }
 
@@ -80,6 +89,9 @@ public class LoginActivity extends AppCompatActivity {
                 public void onFailure(Call<LoginModel> call, Throwable t) {
                     Toast.makeText(getApplicationContext(), "Please check your network connection and internet permission", Toast.LENGTH_LONG).show();
                     progressBar.setVisibility(View.GONE);
+                    editUsername.setVisibility(View.GONE);
+                    editPass.setVisibility(View.GONE);
+                    loginBtn.setVisibility(View.GONE);
                 }
             });
         
