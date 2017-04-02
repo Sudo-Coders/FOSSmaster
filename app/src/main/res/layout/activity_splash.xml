@@ -4,24 +4,33 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_gravity="center"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="#fff">
 
     <ImageView
         android:layout_marginTop="70dp"
         android:id="@+id/imgLogo"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:src="@drawable/gh"
-        android:layout_marginBottom="50dp"/>
+        android:src="@drawable/github"
+        android:layout_marginBottom="70dp"/>
 
     <TextView
+        android:textStyle="italic|bold"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="135dp"
         android:textSize="35dp"
-        android:textColor="#132745"
+        android:textColor="#0d2959"
         android:gravity="center_horizontal"
         android:text="FOSSmaster"
         android:id="@+id/textView" />
+    <TextView
+        android:text="Welcome to the Open Source World"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="110dp"
+        android:textSize="16dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:gravity="center"/>
 
 </LinearLayout>

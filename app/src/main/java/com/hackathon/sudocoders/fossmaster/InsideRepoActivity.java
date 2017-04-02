@@ -5,6 +5,8 @@ import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
+import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -20,6 +22,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static android.net.Uri.parse;
+
 public class InsideRepoActivity extends AppCompatActivity {
 
     private ProgressBar progressBar;
@@ -33,6 +37,7 @@ public class InsideRepoActivity extends AppCompatActivity {
     private TextView language;
     private TextView stars_total;
     private TextView foks_total;
+    private Toolbar toolbar;
 
 
     @Override
@@ -51,13 +56,11 @@ public class InsideRepoActivity extends AppCompatActivity {
         language = (TextView) findViewById(R.id.language);
         stars_total = (TextView) findViewById(R.id.stars_total);
         foks_total = (TextView) findViewById(R.id.forks_total);
+        toolbar = (Toolbar) findViewById(R.id.readme_toolbar);
 
-        title.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(title.getText().toString())));
-            }
-        });
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Repo Details");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         cardInfo.setVisibility(View.INVISIBLE);
         cardReadme.setVisibility(View.INVISIBLE);
@@ -110,6 +113,12 @@ public class InsideRepoActivity extends AppCompatActivity {
                 progressBar.setVisibility(View.GONE);
             }
         });
+    }
+
+    public void openLink(View v){
+        Intent launchBrowser = new Intent(Intent.ACTION_VIEW);
+        launchBrowser.setData(Uri.parse(url.getText().toString()));
+        startActivity(launchBrowser);
     }
 
 }

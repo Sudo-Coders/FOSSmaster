@@ -8,7 +8,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class StarredReposDetails {
 
-    @SerializedName("name")
+    @SerializedName("full_name")
     private String name;
 
     @SerializedName("desc")
