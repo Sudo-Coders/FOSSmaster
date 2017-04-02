@@ -1,26 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:elevation="10dp"
-    android:id="@+id/repo_card"
-    android:layout_marginTop="4dp"
-    android:layout_marginLeft="6dp"
-    android:layout_marginRight="6dp"
-    android:layout_marginBottom="4dp">
-
-    <LinearLayout
+    android:layout_height="match_parent">
+    
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:elevation="10dp"
+        android:padding="6dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginBottom="4dp"
         >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="10dp"
+            >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
             >
 
             <TextView
@@ -30,9 +35,7 @@
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:maxLines="2"
-
-                android:text="Defualt"
-                android:layout_marginLeft="22dp"
+                android:text="Default"
                 android:textColor="@android:color/black"
                 android:paddingBottom="9dp"
                 android:paddingTop="9dp"
@@ -45,14 +48,20 @@
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:maxLines="2"
-                android:text="defualt"
-                android:layout_marginLeft="22dp"
+                android:text="default"
                 android:layout_gravity="center_vertical"
                 android:paddingTop="8dp"
                 android:textColor="@android:color/black"
                 android:paddingBottom="9dp"
+                />
 
-
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="url"
+                android:id="@+id/url"
+                android:textSize="20dp"
+                android:textStyle="italic"
                 />
 
         </LinearLayout>
@@ -61,7 +70,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="7px"
-            android:paddingBottom="9dp"
+            android:paddingBottom="13dp"
             android:layout_marginLeft="21dp"
             >
             <de.hdodenhof.circleimageview.CircleImageView
@@ -132,5 +141,63 @@
                 android:paddingStart="4dp"
                 android:textColor="@android:color/black" />
         </LinearLayout>
-    </LinearLayout>
-</android.support.v7.widget.CardView>
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_readme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginBottom="4dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:text="Read Me File"
+                android:layout_marginBottom="10dp"
+                android:textStyle="bold"
+                android:id="@+id/repodetail"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/reporeadme"
+                android:text="No Read Me found"
+                android:textSize="20dp"
+                />
+
+
+
+        </LinearLayout>
+
+
+
+
+
+    </android.support.v7.widget.CardView>
+
+    <ProgressBar
+        android:id="@+id/progress"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
+    
+
+</LinearLayout>

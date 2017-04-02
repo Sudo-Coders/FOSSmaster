@@ -10,11 +10,14 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.hackathon.sudocoders.fossmaster.Utils.SharedPref;
+
 public class StartOpenSource extends AppCompatActivity {
 
 
     private RadioGroup radioGroup;
     private Button next;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,12 +41,15 @@ public class StartOpenSource extends AppCompatActivity {
 
                 // get selected radio button from radioGroup
                 int selectedId = radioGroup.getCheckedRadioButtonId();
-
+                SharedPref sharedPref = new SharedPref(getApplicationContext());
                 // find the radiobutton by returned id
                 next = (RadioButton) findViewById(selectedId);
 
+                sharedPref.setLanguage(next.getText().toString());
+                // STOPSHIP: 2/4/17
+                sharedPref.setOpensourceStatus(true);
                 startActivity(new Intent(StartOpenSource.this,SelectDifficulty.class));
-
+                System.out.println(sharedPref.getLanguage());
                 Toast.makeText(StartOpenSource.this,
                         next.getText() + " is selected", Toast.LENGTH_SHORT).show();
 

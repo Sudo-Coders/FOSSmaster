@@ -16,6 +16,7 @@ import com.hackathon.sudocoders.fossmaster.Model.StarredRepos;
 import com.hackathon.sudocoders.fossmaster.Model.StarredRepos;
 import com.hackathon.sudocoders.fossmaster.Model.StarredReposDetails;
 import com.hackathon.sudocoders.fossmaster.Utils.ApiInterface;
+import com.hackathon.sudocoders.fossmaster.Utils.SharedPref;
 import com.hackathon.sudocoders.fossmaster.Utils.Util;
 
 import java.util.ArrayList;
@@ -49,18 +50,18 @@ public class StarredReposActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Starred Repository");
-
+        SharedPref sharedPref = new SharedPref(getApplicationContext());
         layoutManager = new LinearLayoutManager(getApplicationContext());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
 
         
         recyclerView.setLayoutManager(layoutManager);
         progressBar.setVisibility(View.VISIBLE);
-        getStarredRepos();
+        getStarredRepos(sharedPref.getUserName());
     }
-    public void getStarredRepos(){
+    public void getStarredRepos(String username){
         ApiInterface mApi = Util.getRetrofitService();
-        Call<StarredRepos> mservice = mApi.getStarredRepos();
+        Call<StarredRepos> mservice = mApi.getStarredRepos(username);
         mservice.enqueue(new Callback<StarredRepos>() {
 
             @Override

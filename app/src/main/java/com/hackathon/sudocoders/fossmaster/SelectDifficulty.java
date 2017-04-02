@@ -9,6 +9,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.hackathon.sudocoders.fossmaster.Utils.SharedPref;
+
 public class SelectDifficulty extends AppCompatActivity {
 
     private RadioGroup radioGroup;
@@ -18,14 +20,14 @@ public class SelectDifficulty extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_difficulty);
-
+        radioGroup  = (RadioGroup) findViewById(R.id.selectDifc);
         addListenerOnButton();
     }
 
 
     public void addListenerOnButton() {
 
-        radioGroup  = (RadioGroup) findViewById(R.id.selectLang);
+
         next = (Button) findViewById(R.id.nextBtn);
 
         next.setOnClickListener(new View.OnClickListener() {
@@ -35,11 +37,11 @@ public class SelectDifficulty extends AppCompatActivity {
 
                 // get selected radio button from radioGroup
                 int selectedId = radioGroup.getCheckedRadioButtonId();
-
+                SharedPref sharedPref = new SharedPref(getApplicationContext());
                 // find the radiobutton by returned id
                 next = (RadioButton) findViewById(selectedId);
-
-//                startActivity(new Intent(SelectDifficulty.this,fuck.class));
+                sharedPref.setLevel(next.getText().toString());
+                startActivity(new Intent(SelectDifficulty.this,OpenSourceActivity.class));
 
                 Toast.makeText(SelectDifficulty.this,
                         next.getText() + " is selected", Toast.LENGTH_SHORT).show();
