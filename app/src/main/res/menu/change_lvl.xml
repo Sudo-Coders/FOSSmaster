@@ -2,8 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_exit"
+        android:id="@+id/action_change"
         android:orderInCategory="100"
-        android:title="Exit"
+        android:title="Change Lang./Level"
         app:showAsAction="never" />
 </menu>

@@ -3,10 +3,10 @@ package com.hackathon.sudocoders.fossmaster.Model;
 import com.google.gson.annotations.SerializedName;
 
 /**
- * Created by jatin on 1/4/17.
+ * Created by jatin on 2/4/17.
  */
 
-public class StarredReposDetails {
+public class OpenSourceModel {
 
     @SerializedName("full_name")
     private String name;
@@ -23,7 +23,7 @@ public class StarredReposDetails {
     @SerializedName("forks")
     private String no_forks;
 
-    public StarredReposDetails(String name, String desc, String language, String stars, String no_forks) {
+    public OpenSourceModel(String name, String desc, String language, String stars, String no_forks) {
         this.name = name;
         this.desc = desc;
         this.language = language;
@@ -35,41 +35,39 @@ public class StarredReposDetails {
         return name;
     }
 
-    public String getDesc() {
-        return desc;
-    }
-
-    public String getLanguage() {
-        return language;
-    }
-
-    public String getStars() {
-        return stars;
-    }
-
-    public String getNo_forks() {
-        return no_forks;
-    }
-
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDesc() {
+        return desc;
     }
 
     public void setDesc(String desc) {
         this.desc = desc;
     }
 
+    public String getLanguage() {
+        return language;
+    }
+
     public void setLanguage(String language) {
         this.language = language;
+    }
+
+    public String getStars() {
+        return stars;
     }
 
     public void setStars(String stars) {
         this.stars = stars;
     }
 
+    public String getNo_forks() {
+        return no_forks;
+    }
+
     public void setNo_forks(String no_forks) {
         this.no_forks = no_forks;
     }
-
-
 }

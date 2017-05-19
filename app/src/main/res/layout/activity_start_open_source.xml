@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="16dp"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/selectLangLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Choose the langugage you are interested in contributing to Open Source."
+            android:textSize="20dp"
+            android:textStyle="bold|italic"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="10dp"/>
+
+      <RadioGroup
+          android:id="@+id/selectLang"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" >
+
+        <RadioButton
+            android:id="@+id/radioJava"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text=" Java"
+            android:checked="true"/>
+
+        <RadioButton
+            android:id="@+id/radioJavascript"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text=" Javascript" />
+
+
+
+        <RadioButton
+            android:id="@+id/radioCpp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="cpp" />
+          <RadioButton
+              android:id="@+id/radioC"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:text="C" />
+
+        <RadioButton
+            android:id="@+id/radioPython"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Python" />
+
+        <RadioButton
+            android:id="@+id/radioCss"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="css" />
+
+        <RadioButton
+            android:id="@+id/radioHTML"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text=" HTML" />
+
+        <RadioButton
+            android:id="@+id/radioRuby"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="ruby" />
+
+        <RadioButton
+            android:id="@+id/radioSwift"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="swift" />
+
+          <RadioButton
+              android:id="@+id/radioShell"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:text="shell" />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:id="@+id/nextBtn"
+            android:text="NEXT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

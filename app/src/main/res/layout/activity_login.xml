@@ -15,34 +15,32 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         >
 
         <ImageView
             android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="120dp"
-            android:src="@drawable/gh"
+            android:src="@drawable/github"
             android:id="@+id/imageView"
             android:layout_marginTop="25dp"
-            android:layout_marginBottom="25dp"/>
+            android:layout_marginBottom="40dp"/>
 
     </LinearLayout>
 
 
-    <android.support.design.widget.TextInputLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/et4">
+
 
     <EditText
+        android:maxLines="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Username"
-        android:ems="10"
         android:id="@+id/editUsername"
         />
 
-</android.support.design.widget.TextInputLayout>
+
 
 
 
@@ -52,35 +50,32 @@
         android:layout_height="wrap_content"
         style="?android:attr/progressBarStyle"
         android:layout_gravity="center"
+
         android:visibility="gone"/>
 
 
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
 
-        android:id="@+id/et5">
 
         <EditText
+            android:maxLines="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
             android:hint="Password"
             android:inputType="textPassword"
             android:id="@+id/editPass"
              />
 
-    </android.support.design.widget.TextInputLayout>
+
 
 
 
     <Button
         android:text="Log In"
         android:layout_width="200dp"
-        android:background="@android:color/holo_blue_dark"
+        android:background="@color/colorPrimary"
         android:textColor="@android:color/white"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="50dp"
         android:layout_gravity="center"
         android:id="@+id/loginBtn"
         android:onClick="loginGithub"/>

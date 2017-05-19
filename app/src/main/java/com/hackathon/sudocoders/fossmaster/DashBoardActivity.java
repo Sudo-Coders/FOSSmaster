@@ -15,6 +15,7 @@ import com.hackathon.sudocoders.fossmaster.Model.DashboardUserDetail;
 import com.hackathon.sudocoders.fossmaster.Model.MyRepo;
 import com.hackathon.sudocoders.fossmaster.Model.Dashboard;
 import com.hackathon.sudocoders.fossmaster.Utils.ApiInterface;
+import com.hackathon.sudocoders.fossmaster.Utils.SharedPref;
 import com.hackathon.sudocoders.fossmaster.Utils.Util;
 
 import java.util.ArrayList;
@@ -38,7 +39,7 @@ public class DashBoardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_repos);
 
         progressBar = (ProgressBar) findViewById(R.id.leader_progress);
-
+        SharedPref sharedPref = new SharedPref(getApplicationContext());
 
         recyclerView = (RecyclerView) findViewById(R.id.repo_recycler);
       /*  NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
@@ -56,15 +57,15 @@ public class DashBoardActivity extends AppCompatActivity {
 
         recyclerView.setLayoutManager(layoutManager);
         progressBar.setVisibility(View.VISIBLE);
-        getDashboard();
+        getDashboard(sharedPref.getUserName());
 
 
     }
 
 
-    public void getDashboard(){
+    public void getDashboard(String username){
         ApiInterface mApi = Util.getRetrofitService();
-        Call<Dashboard> mservice = mApi.getDashboard();
+        Call<Dashboard> mservice = mApi.getDashboard(username);
         mservice.enqueue(new Callback<Dashboard>() {
 
             @Override
