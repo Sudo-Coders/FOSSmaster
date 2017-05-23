@@ -49,6 +49,7 @@ public class StartOpenSource extends AppCompatActivity {
                 // STOPSHIP: 2/4/17
                 sharedPref.setOpensourceStatus(true);
                 startActivity(new Intent(StartOpenSource.this,SelectDifficulty.class));
+                finish();
                 System.out.println(sharedPref.getLanguage());
                 Toast.makeText(StartOpenSource.this,
                         next.getText() + " is selected", Toast.LENGTH_SHORT).show();

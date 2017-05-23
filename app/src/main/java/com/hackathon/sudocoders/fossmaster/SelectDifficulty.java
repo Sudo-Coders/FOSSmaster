@@ -24,6 +24,12 @@ public class SelectDifficulty extends AppCompatActivity {
         addListenerOnButton();
     }
 
+    @Override
+    public void onBackPressed(){
+        super.onBackPressed();
+        startActivity(new Intent(SelectDifficulty.this,StartOpenSource.class));
+    }
+
 
     public void addListenerOnButton() {
 
@@ -42,7 +48,7 @@ public class SelectDifficulty extends AppCompatActivity {
                 next = (RadioButton) findViewById(selectedId);
                 sharedPref.setLevel(next.getText().toString());
                 startActivity(new Intent(SelectDifficulty.this,OpenSourceActivity.class));
-
+                finish();
                 Toast.makeText(SelectDifficulty.this,
                         next.getText() + " is selected", Toast.LENGTH_SHORT).show();
 
