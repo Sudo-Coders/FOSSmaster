@@ -58,13 +58,21 @@ public class OpenSourceActivity extends AppCompatActivity {
         adapter = new OpenSourceAdapter(users, getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
         progressBar.setVisibility(View.VISIBLE);
+
         int level=1;
-        if(sharedPref.getLevel()=="Beginner Level")
+
+        if(sharedPref.getLevel().equals("Beginner Level")) {
             level = 1;
-        if(sharedPref.getLevel()=="Moderate Level")
+        }
+
+        else if(sharedPref.getLevel().equals("Moderate Level")) {
             level = 2;
-        if(sharedPref.getLevel()=="Advanced Level")
+        }
+
+        else if(sharedPref.getLevel().equals("Advanced Level")) {
             level = 3;
+        }
+
         getOpenSource(sharedPref.getLanguage(),level);
         
 
