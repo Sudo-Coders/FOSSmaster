@@ -42,7 +42,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="14dp"
                     style="@style/TextAppearance.AppCompat.Small"
-                    android:text="defualt"
+                    android:text="default"
 
                     />
 
@@ -65,7 +65,7 @@
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:maxLines="2"
-                    android:text="defualt"
+                    android:text="Default"
                     android:layout_marginLeft="22dp"
                     android:layout_gravity="center_vertical"
                     android:paddingTop="8dp"
@@ -81,7 +81,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/desc2"
-                    android:text="Defualt"
+                    android:text="Default"
                     android:layout_marginLeft="24dp"
                     android:layout_marginBottom="7dp"
                     android:layout_marginTop="9dp"

@@ -61,14 +61,14 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.Dash
         if(user.getType().equals("CreateEvent")){
 
             holder.description2.setVisibility(View.GONE);
-            holder.reponame.setText( "Created a repositry" + user.getRepo_name());
+            holder.reponame.setText( "Created a Repository " + user.getRepo_name());
         }
         if(user.getType().equals("ForkEvent")){
 
-            holder.reponame.setText("Forked" + user.getRepo_name());
+            holder.reponame.setText("Forked " + user.getRepo_name());
 
             String[] separated = user.getRepo_name().split("/");
-            holder.description2.setText("Forked Repositry is at " + user.getUser_name() + "/" + separated[1]);
+            holder.description2.setText("Forked Repository is at " + user.getUser_name() + "/" + separated[1]);
         }
 
         if(user.getType().equals("WatchEvent")){
@@ -76,7 +76,7 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.Dash
                 holder.description2.setVisibility(View.GONE);
         }
         if(user.getType().equals("MemberEvent")){
-            holder.reponame.setText("Added a contributor to the repo " + user.getRepo_name());
+            holder.reponame.setText("Added a Contributor to Repo " + user.getRepo_name());
             holder.description2.setVisibility(View.GONE);
         }
 
