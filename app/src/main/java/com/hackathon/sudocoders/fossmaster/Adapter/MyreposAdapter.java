@@ -57,6 +57,9 @@ public class MyreposAdapter extends RecyclerView.Adapter<MyreposAdapter.MyRepoVi
         holder.no_stars.setText(user.getStars());
         holder.fork_total.setText(user.getNo_forks());
         holder.desc.setText(user.getDesc());
+        if(user.getDesc()==null){
+            holder.desc.setText("<No Description>");
+        }
         holder.name.setText(user.getName());
         holder.language.setText(user.getLanguage());
 
@@ -68,7 +71,7 @@ public class MyreposAdapter extends RecyclerView.Adapter<MyreposAdapter.MyRepoVi
                 Intent i = new Intent(context, InsideRepoActivity.class);
                 i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);     //To make activity a part of new task on history stack.
                 context.startActivity(i);
-                
+
             }
         });
 
