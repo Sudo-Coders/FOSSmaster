@@ -64,7 +64,11 @@ public class MyreposAdapter extends RecyclerView.Adapter<MyreposAdapter.MyRepoVi
             @Override
             public void onClick(View v) {
                 sharedPref.setRepoName(user.getName());
-                context.startActivity(new Intent(context, InsideRepoActivity.class));
+
+                Intent i = new Intent(context, InsideRepoActivity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);     //To make activity a part of new task on history stack.
+                context.startActivity(i);
+                
             }
         });
 
