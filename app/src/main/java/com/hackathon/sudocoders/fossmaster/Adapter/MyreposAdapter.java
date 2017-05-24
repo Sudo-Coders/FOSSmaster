@@ -57,6 +57,9 @@ public class MyreposAdapter extends RecyclerView.Adapter<MyreposAdapter.MyRepoVi
         holder.no_stars.setText(user.getStars());
         holder.fork_total.setText(user.getNo_forks());
         holder.desc.setText(user.getDesc());
+        if(user.getDesc()==null){
+            holder.desc.setText("<No Description>");
+        }
         holder.name.setText(user.getName());
         holder.language.setText(user.getLanguage());
 
@@ -64,11 +67,15 @@ public class MyreposAdapter extends RecyclerView.Adapter<MyreposAdapter.MyRepoVi
             @Override
             public void onClick(View v) {
                 sharedPref.setRepoName(user.getName());
-                context.startActivity(new Intent(context, InsideRepoActivity.class));
+
+                Intent i = new Intent(context, InsideRepoActivity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);     //To make activity a part of new task on history stack.
+                context.startActivity(i);
+
             }
         });
 
-        String c_name = user.getLanguage();
+        String lang_name = user.getLanguage();
         Resources resources = context.getResources();
         Drawable d;
         if (user.getLanguage()== null) {
@@ -76,7 +83,7 @@ public class MyreposAdapter extends RecyclerView.Adapter<MyreposAdapter.MyRepoVi
             holder.language.setVisibility(View.GONE);
         }
         else{
-            switch (c_name) {
+            switch (lang_name) {
                 case "C":
                     d= resources.getDrawable(R.drawable.shape_oval_c);
                     break;
@@ -104,9 +111,45 @@ public class MyreposAdapter extends RecyclerView.Adapter<MyreposAdapter.MyRepoVi
                 case "HTML":
                     d =  resources.getDrawable(R.drawable.shape_oval_html);
                     break;
-                default:
                 case "Java":
                     d =  resources.getDrawable(R.drawable.shape_oval_java);
+                    break;
+                case "Kotlin":
+                    d =  resources.getDrawable(R.drawable.shape_oval_kotlin);
+                    break;
+                case "Go":
+                    d =  resources.getDrawable(R.drawable.shape_oval_go);
+                    break;
+                case "Lua":
+                    d =  resources.getDrawable(R.drawable.shape_oval_lua);
+                    break;
+                case "Matlab":
+                    d =  resources.getDrawable(R.drawable.shape_oval_matlab);
+                    break;
+                case "Pascal":
+                    d =  resources.getDrawable(R.drawable.shape_oval_pascal);
+                    break;
+                case "Perl":
+                    d =  resources.getDrawable(R.drawable.shape_oval_perl);
+                    break;
+                case "PHP":
+                    d =  resources.getDrawable(R.drawable.shape_oval_php);
+                    break;
+                case "R":
+                    d =  resources.getDrawable(R.drawable.shape_oval_r);
+                    break;
+                case "Scala":
+                    d =  resources.getDrawable(R.drawable.shape_oval_scala);
+                    break;
+                case "ASP":
+                    d =  resources.getDrawable(R.drawable.shape_oval_asp);
+                    break;
+                case "CSS":
+                    d =  resources.getDrawable(R.drawable.shape_oval_css);
+                    break;
+
+                default:
+                    d =  resources.getDrawable(R.drawable.shape_oval_default);
 
             }
             holder.language_icon.setBackground(d);
