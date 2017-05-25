@@ -51,7 +51,7 @@ public class OpenSourceActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.myrepo_toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Open Source Activity");
+        getSupportActionBar().setTitle("Repos to Contribute");
 
         layoutManager = new LinearLayoutManager(getApplicationContext());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
