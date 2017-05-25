@@ -8,15 +8,14 @@
     <string name="action_settings">Settings</string>
 
     <string name="AboutFossmaster">
-        FOSSmaster lets user to access github for open source projects. It contains a
-        "Dashboard" section which shows repositeries of user followers and the repositeries
-        which are starred by user. "My Repositeries" section shows all projects on which user
-        had worked and is currently working upon. "Starred Repositeries" section lists all the
-        projects on which user may wish to work upon in future. "Open Source Contribution" section
-        initially makes user to select their level as beginner, medium or expert. According to the
-        selection of level, app chooses repos on which user can contribute and it is increased
-        each time user makes 5 commits. Therefore the app helps user to increase their knowledge
-        about contribution in open source projects and prepare them for higher competitions.
+        FOSSmaster allows users to access their Github profiles and manage the same. It enhances your experience using the interactive components in the app.\n\n
+        About the main features : \n\n
+        \> It contains a \'Current Feed\' section which shows the current activities done by the people you follow. It is similar to the \'Dashboard\' you get on Github website.\n\n
+        \> \'My Repositories\' section shows all your public repos and forked ones.\n\n
+        \> \'Starred Repositeries\' section lists all the repos you have starred. \n\n
+        \> \'Pull Requests\' section helps you manage all your current active or closed pull requests. \n\n
+        \> The main attraction of this app is the \'Open Source Contribution\' section. Using this feature user can find repos for contribution
+        with filters like programming language and difficulty level.\n\n
 
     </string>
 </resources>
