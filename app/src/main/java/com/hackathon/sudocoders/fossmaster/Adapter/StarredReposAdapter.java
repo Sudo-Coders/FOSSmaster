@@ -10,8 +10,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.hackathon.sudocoders.fossmaster.Model.DashboardUserDetail;
-import com.hackathon.sudocoders.fossmaster.Model.MyRepo;
 import com.hackathon.sudocoders.fossmaster.Model.StarredReposDetails;
 import com.hackathon.sudocoders.fossmaster.R;
 
@@ -33,7 +31,7 @@ public class StarredReposAdapter extends RecyclerView.Adapter<StarredReposAdapte
 
     @Override
     public StarredViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_starred_repos,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view_starred_repos,parent,false);
         StarredViewHolder mrv = new StarredViewHolder(view,users,context);
         return mrv;
 
