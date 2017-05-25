@@ -106,9 +106,8 @@
                             android:layout_below="@id/grup_name"
                             android:text="@string/AboutFossmaster"
                             android:padding="10dp"
-                            android:textColor="#111"
-                            android:fontFamily="sans-serif-thin"
-                            android:textSize="20sp"/>
+                            android:textColor="#112ba3"
+                            android:textSize="18sp"/>
 
                     </LinearLayout>
 

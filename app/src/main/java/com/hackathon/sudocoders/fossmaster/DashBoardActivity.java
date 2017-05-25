@@ -46,11 +46,10 @@ public class DashBoardActivity extends AppCompatActivity {
         navigationView.setNavigationItemSelectedListener(this);*/
 
         toolbar = (Toolbar) findViewById(R.id.myrepo_toolbar);
-
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Dashboard");
 
-        getSupportActionBar().setTitle("Dashboard activity");
         layoutManager = new LinearLayoutManager(getApplicationContext());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
 

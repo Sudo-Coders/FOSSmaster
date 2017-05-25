@@ -49,7 +49,8 @@ public class StarredReposActivity extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Starred Repository");
+        getSupportActionBar().setTitle("Starred Repos");
+
         SharedPref sharedPref = new SharedPref(getApplicationContext());
         layoutManager = new LinearLayoutManager(getApplicationContext());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
