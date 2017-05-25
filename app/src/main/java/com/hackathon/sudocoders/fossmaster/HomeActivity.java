@@ -162,7 +162,7 @@ public class HomeActivity extends AppCompatActivity
         }  else if (id == R.id.nav_feedback) {
             Intent intent = new Intent(Intent.ACTION_SENDTO);
 
-            String uriText = "mailto:" + Uri.encode("sudo-coders@gmail.com") + "?subject=" + Uri.encode("Reporting A Bug/Feedback") + "&body=" + Uri.encode("Hello, \nI want to report a bug/give feedback corresponding to the FOSSmaster.\n.....\n\n-Your name");
+            String uriText = "mailto:" + Uri.encode("sudo-coders@gmail.com") + "?subject=" + Uri.encode("Reporting A Bug/Feedback") + "&body=" + Uri.encode("Hello, \nI want to report a bug/give feedback for FOSSmaster app.\n.....\n\n-Your name");
             Uri uri = Uri.parse(uriText);
             intent.setData(uri);
             startActivity(Intent.createChooser(intent, "Send Email"));
@@ -171,7 +171,7 @@ public class HomeActivity extends AppCompatActivity
 
             AlertDialog.Builder alertDialog2 = new AlertDialog.Builder(HomeActivity.this);
             alertDialog2.setTitle("Contact Us");
-            alertDialog2.setMessage("Phone No. : +919882926225\nEmail : sudo-coders@gmail.com");
+            alertDialog2.setMessage("\nPhone No. : +919882926225\n\nEmail : sudo-coders@gmail.com");
             alertDialog2.setIcon(R.drawable.github);
             alertDialog2.show();
 
