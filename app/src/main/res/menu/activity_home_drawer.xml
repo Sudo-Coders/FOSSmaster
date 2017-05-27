@@ -1,44 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+
     <group android:checkableBehavior="single">
+
         <item
             android:id="@+id/nav_feed"
             android:title="Current Feed" />
+
         <item
             android:id="@+id/nav_repo"
             android:title="My Repositories" />
+
         <item
             android:id="@+id/nav_pr"
             android:title="My Pull Requests" />
+
         <item
             android:id="@+id/nav_star"
             android:title="Starred Repos" />
+
     </group>
+
 
     <item android:title="Communicate">
         <menu>
+
             <item
                 android:id="@+id/nav_feedback"
                 android:title="Feedback" />
+
             <item
                 android:id="@+id/nav_contact"
                 android:title="Contact Us" />
+
         </menu>
     </item>
 
 
     <item android:title="Other">
         <menu>
+
             <item
                 android:id="@+id/nav_settings"
                 android:title="Settings" />
+
+            <item
+                android:id="@+id/nav_logout"
+                android:title="Logout" />
+
             <item
                 android:id="@+id/nav_about"
                 android:title="About App" />
+
             <item
                 android:id="@+id/nav_team"
                 android:title="Contributors" />
+
         </menu>
     </item>
+
+
 </menu>
