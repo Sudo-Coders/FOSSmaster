@@ -26,6 +26,15 @@ import android.content.SharedPreferences;
             editor = pref.edit();
         }
 
+        public void clearPrefOnLogout(Context context){
+            this._context = context;
+            pref = _context.getSharedPreferences(PREF_NAME,PRIVATE_MODE);
+            editor = pref.edit();
+            editor.clear();
+            editor.commit();
+
+        }
+
         public void setFirstTimeLaunch(boolean isFirstTime) {
             editor.putBoolean(IS_FIRST_TIME_LAUNCH, isFirstTime);
             editor.commit();

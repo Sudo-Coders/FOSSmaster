@@ -71,7 +71,7 @@ public class LoginActivity extends AppCompatActivity {
                         String username = response.body().getUsername();
                         SharedPref sp = new  SharedPref(getApplicationContext());
                         sp.setLoginStatus(true);
-                        sp.setUserName(response.body().getUsername());
+                        sp.setUserName(username);
                         progressBar.setVisibility(View.GONE);
                         startActivity(new Intent(LoginActivity.this, HomeActivity.class));
 

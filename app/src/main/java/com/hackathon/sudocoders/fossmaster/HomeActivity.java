@@ -2,6 +2,7 @@ package com.hackathon.sudocoders.fossmaster;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -141,6 +142,13 @@ public class HomeActivity extends AppCompatActivity
             finish();
             return true;
         }
+        else if(id == R.id.action_logout){
+            SharedPref sharedPref = new SharedPref(getApplicationContext());
+
+            sharedPref.clearPrefOnLogout(getApplicationContext());
+            startActivity(new Intent(HomeActivity.this, LoginActivity.class));
+            finish();
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -177,6 +185,12 @@ public class HomeActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_about) {
             startActivity(new Intent(HomeActivity.this,AboutUSActivity.class));
+        } else if(id==R.id.nav_logout){
+            SharedPref sharedPref = new SharedPref(getApplicationContext());
+
+            sharedPref.clearPrefOnLogout(getApplicationContext());
+            startActivity(new Intent(HomeActivity.this, LoginActivity.class));
+            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
