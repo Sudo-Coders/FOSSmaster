@@ -46,7 +46,7 @@ public class StarredReposAdapter extends RecyclerView.Adapter<StarredReposAdapte
         holder.desc.setText(user.getDesc());
         holder.name.setText(user.getName());
         holder.language.setText(user.getLanguage());
-        String c_name = user.getLanguage();
+        String lang_name = user.getLanguage();
         Resources resources = context.getResources();
         Drawable d;
         if (user.getLanguage()== null) {
@@ -54,7 +54,7 @@ public class StarredReposAdapter extends RecyclerView.Adapter<StarredReposAdapte
             holder.language.setVisibility(View.GONE);
         }
         else{
-            switch (c_name) {
+            switch (lang_name) {
                 case "C":
                     d= resources.getDrawable(R.drawable.shape_oval_c);
                     break;
@@ -82,9 +82,45 @@ public class StarredReposAdapter extends RecyclerView.Adapter<StarredReposAdapte
                 case "HTML":
                     d =  resources.getDrawable(R.drawable.shape_oval_html);
                     break;
-                default:
                 case "Java":
                     d =  resources.getDrawable(R.drawable.shape_oval_java);
+                    break;
+                case "Kotlin":
+                    d =  resources.getDrawable(R.drawable.shape_oval_kotlin);
+                    break;
+                case "Go":
+                    d =  resources.getDrawable(R.drawable.shape_oval_go);
+                    break;
+                case "Lua":
+                    d =  resources.getDrawable(R.drawable.shape_oval_lua);
+                    break;
+                case "Matlab":
+                    d =  resources.getDrawable(R.drawable.shape_oval_matlab);
+                    break;
+                case "Pascal":
+                    d =  resources.getDrawable(R.drawable.shape_oval_pascal);
+                    break;
+                case "Perl":
+                    d =  resources.getDrawable(R.drawable.shape_oval_perl);
+                    break;
+                case "PHP":
+                    d =  resources.getDrawable(R.drawable.shape_oval_php);
+                    break;
+                case "R":
+                    d =  resources.getDrawable(R.drawable.shape_oval_r);
+                    break;
+                case "Scala":
+                    d =  resources.getDrawable(R.drawable.shape_oval_scala);
+                    break;
+                case "ASP":
+                    d =  resources.getDrawable(R.drawable.shape_oval_asp);
+                    break;
+                case "CSS":
+                    d =  resources.getDrawable(R.drawable.shape_oval_css);
+                    break;
+
+                default:
+                    d =  resources.getDrawable(R.drawable.shape_oval_default);
 
             }
             holder.language_icon.setBackground(d);
