@@ -81,9 +81,46 @@ public class OpenSourceAdapter extends RecyclerView.Adapter<OpenSourceAdapter.Op
                 case "HTML":
                     d =  resources.getDrawable(R.drawable.shape_oval_html);
                     break;
-                default:
                 case "Java":
                     d =  resources.getDrawable(R.drawable.shape_oval_java);
+                    break;
+                case "Kotlin":
+                    d =  resources.getDrawable(R.drawable.shape_oval_kotlin);
+                    break;
+                case "Go":
+                    d =  resources.getDrawable(R.drawable.shape_oval_go);
+                    break;
+                case "Lua":
+                    d =  resources.getDrawable(R.drawable.shape_oval_lua);
+                    break;
+                case "Matlab":
+                    d =  resources.getDrawable(R.drawable.shape_oval_matlab);
+                    break;
+                case "Pascal":
+                    d =  resources.getDrawable(R.drawable.shape_oval_pascal);
+                    break;
+                case "Perl":
+                    d =  resources.getDrawable(R.drawable.shape_oval_perl);
+                    break;
+                case "PHP":
+                    d =  resources.getDrawable(R.drawable.shape_oval_php);
+                    break;
+                case "R":
+                    d =  resources.getDrawable(R.drawable.shape_oval_r);
+                    break;
+                case "Scala":
+                    d =  resources.getDrawable(R.drawable.shape_oval_scala);
+                    break;
+                case "ASP":
+                    d =  resources.getDrawable(R.drawable.shape_oval_asp);
+                    break;
+                case "CSS":
+                    d =  resources.getDrawable(R.drawable.shape_oval_css);
+                    break;
+
+                default:
+                    d =  resources.getDrawable(R.drawable.shape_oval_default);
+
 
             }
             holder.language_icon.setBackground(d);
