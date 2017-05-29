@@ -43,17 +43,25 @@
         <activity
             android:name=".LoginActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".StartOpenSource"  android:parentActivityName=".HomeActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".SelectDifficulty"  android:parentActivityName=".HomeActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".OpenSourceActivity" android:parentActivityName=".HomeActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-
-
-        </activity>
-        <activity android:name=".InsideRepoActivity"
+        <activity
+            android:name=".StartOpenSource"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SelectDifficulty"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".OpenSourceActivity"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".InsideRepoActivity"
             android:parentActivityName=".MyRepositories"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".PullRequestsActivity"
+            android:parentActivityName=".HomeActivity"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>
