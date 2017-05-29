@@ -94,7 +94,7 @@ public class HomeActivity extends AppCompatActivity
 
     public void getMypr(View v){
 
-
+        startActivity(new Intent(HomeActivity.this,PullRequestsActivity.class));
     }
 
     public void getStars(View v){
@@ -164,7 +164,7 @@ public class HomeActivity extends AppCompatActivity
         } else if (id == R.id.nav_repo) {
             startActivity(new Intent(HomeActivity.this, MyRepositories.class));
         } else if (id == R.id.nav_pr) {
-
+            startActivity(new Intent(HomeActivity.this,PullRequestsActivity.class));
         } else if (id == R.id.nav_star) {
             startActivity(new Intent(HomeActivity.this, StarredReposActivity.class));
         }  else if (id == R.id.nav_feedback) {
