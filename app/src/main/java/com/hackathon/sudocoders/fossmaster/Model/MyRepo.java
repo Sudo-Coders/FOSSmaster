@@ -3,6 +3,7 @@ package com.hackathon.sudocoders.fossmaster.Model;
 /**
  * Created by jatin on 31/3/17.
  */
+
 import com.google.gson.annotations.SerializedName;
 
 public class MyRepo {

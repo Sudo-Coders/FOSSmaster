@@ -22,7 +22,7 @@ import java.util.ArrayList;
  * Created by jatin on 1/4/17.
  */
 
-public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.DashboardViewHolder>{
+public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.DashboardViewHolder> {
 
     private final ArrayList<DashboardUserDetail> users;
     private final Context context;
@@ -36,7 +36,7 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.Dash
     @Override
     public DashboardViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view_dashboard,parent,false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view_dashboard, parent, false);
         DashboardViewHolder mrv = new DashboardViewHolder(v);
         return mrv;
     }
@@ -58,12 +58,12 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.Dash
         });
         System.out.println(user.getUser_image_url());
 
-        if(user.getType().equals("CreateEvent")){
+        if (user.getType().equals("CreateEvent")) {
 
             holder.description2.setVisibility(View.GONE);
-            holder.reponame.setText( "Created a Repository " + user.getRepo_name());
+            holder.reponame.setText("Created a Repository " + user.getRepo_name());
         }
-        if(user.getType().equals("ForkEvent")){
+        if (user.getType().equals("ForkEvent")) {
 
             holder.reponame.setText("Forked " + user.getRepo_name());
 
@@ -71,17 +71,16 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.Dash
             holder.description2.setText("Forked Repository is at " + user.getUser_name() + "/" + separated[1]);
         }
 
-        if(user.getType().equals("WatchEvent")){
-                holder.reponame.setText("Starred " + user.getRepo_name());
-                holder.description2.setVisibility(View.GONE);
+        if (user.getType().equals("WatchEvent")) {
+            holder.reponame.setText("Starred " + user.getRepo_name());
+            holder.description2.setVisibility(View.GONE);
         }
-        if(user.getType().equals("MemberEvent")){
+        if (user.getType().equals("MemberEvent")) {
             holder.reponame.setText("Added a Contributor to Repo " + user.getRepo_name());
             holder.description2.setVisibility(View.GONE);
         }
 
         System.out.println(user.getType());
-
 
 
     }
@@ -94,7 +93,7 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.Dash
     public static class DashboardViewHolder extends RecyclerView.ViewHolder {
 
         TextView user_name;
-      //  TextView type;
+        //  TextView type;
         TextView reponame;
 
         TextView description2;
@@ -104,10 +103,10 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.Dash
         public DashboardViewHolder(View itemView) {
             super(itemView);
             user_name = (TextView) itemView.findViewById(R.id.user_name);
-         //   type= (TextView) itemView.findViewById(R.id.type);
+            //   type= (TextView) itemView.findViewById(R.id.type);
             reponame = (TextView) itemView.findViewById(R.id.desc);
             description2 = (TextView) itemView.findViewById(R.id.desc2);
             user_image = (ImageView) itemView.findViewById(R.id.imgview);
-     }
-}
+        }
+    }
 }

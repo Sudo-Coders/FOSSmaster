@@ -21,6 +21,4 @@ public class PullRequest {
     private String user_img_url;
 
 
-
-
 }

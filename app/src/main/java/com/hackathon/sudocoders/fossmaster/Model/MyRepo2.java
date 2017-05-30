@@ -12,9 +12,9 @@ public class MyRepo2 {
     @SerializedName("success")
     private boolean success;
     @SerializedName("response")
-    private ArrayList<MyRepo>users;
+    private ArrayList<MyRepo> users;
 
-    public MyRepo2(ArrayList<MyRepo> users,boolean success) {
+    public MyRepo2(ArrayList<MyRepo> users, boolean success) {
         this.users = users;
         this.success = success;
     }

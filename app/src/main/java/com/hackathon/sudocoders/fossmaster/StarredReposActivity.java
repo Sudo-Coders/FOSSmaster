@@ -55,19 +55,20 @@ public class StarredReposActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(getApplicationContext());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
 
-        
+
         recyclerView.setLayoutManager(layoutManager);
         progressBar.setVisibility(View.VISIBLE);
         getStarredRepos(sharedPref.getUserName());
     }
-    public void getStarredRepos(String username){
+
+    public void getStarredRepos(String username) {
         ApiInterface mApi = Util.getRetrofitService();
         Call<StarredRepos> mservice = mApi.getStarredRepos(username);
         mservice.enqueue(new Callback<StarredRepos>() {
 
             @Override
             public void onResponse(Call<StarredRepos> call, Response<StarredRepos> response) {
-                if(response!=null && response.isSuccess()) {
+                if (response != null && response.isSuccess()) {
                     users = response.body().getUsers();
 
                     progressBar.setVisibility(View.GONE);
@@ -75,8 +76,7 @@ public class StarredReposActivity extends AppCompatActivity {
 
                     recyclerView.setAdapter(adapter);
 
-                }
-                else{
+                } else {
                     Toast.makeText(StarredReposActivity.this, "Some Problem is there", Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.GONE);
                 }
@@ -90,7 +90,6 @@ public class StarredReposActivity extends AppCompatActivity {
         });
 
     }
-    
-    
-    
+
+
 }

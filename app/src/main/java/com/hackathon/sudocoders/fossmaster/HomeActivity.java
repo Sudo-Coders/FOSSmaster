@@ -55,19 +55,19 @@ public class HomeActivity extends AppCompatActivity
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        View hView =  navigationView.getHeaderView(0);
+        View hView = navigationView.getHeaderView(0);
         navigationView.setNavigationItemSelectedListener(this);
 
         imageUser = (ImageView) hView.findViewById(R.id.imageUser);
         textUser = (TextView) hView.findViewById(R.id.textUser);
         sharedPref = new SharedPref(getApplicationContext());
 
-        String IMG_URL = BASE_URL+sharedPref.getUserName()+".png";
-        Log.d(IMG_URL," hi");
+        String IMG_URL = BASE_URL + sharedPref.getUserName() + ".png";
+        Log.d(IMG_URL, " hi");
 
         textUser.setText(sharedPref.getUserName());
 
-        if(IMG_URL!=null) {
+        if (IMG_URL != null) {
             Glide.with(this).load(IMG_URL).asBitmap().diskCacheStrategy(DiskCacheStrategy.ALL).placeholder(R.drawable.github).error(R.drawable.github).into(new ImageViewTarget<Bitmap>(imageUser) {
                 @Override
                 protected void setResource(Bitmap resource) {
@@ -82,33 +82,32 @@ public class HomeActivity extends AppCompatActivity
     }
 
 
-    public void getFeed(View v){
+    public void getFeed(View v) {
 
-        startActivity(new Intent(HomeActivity.this,DashBoardActivity.class));
+        startActivity(new Intent(HomeActivity.this, DashBoardActivity.class));
     }
 
-    public void getMyrepo(View v){
+    public void getMyrepo(View v) {
 
-        startActivity(new Intent(HomeActivity.this,MyRepositories.class));
+        startActivity(new Intent(HomeActivity.this, MyRepositories.class));
     }
 
-    public void getMypr(View v){
+    public void getMypr(View v) {
 
-        startActivity(new Intent(HomeActivity.this,PullRequestsActivity.class));
+        startActivity(new Intent(HomeActivity.this, PullRequestsActivity.class));
     }
 
-    public void getStars(View v){
+    public void getStars(View v) {
 
-        startActivity(new Intent(HomeActivity.this,StarredReposActivity.class));
+        startActivity(new Intent(HomeActivity.this, StarredReposActivity.class));
     }
 
-    public void startOS(View v){
+    public void startOS(View v) {
         SharedPref sharedPref = new SharedPref(getApplicationContext());
-        if(!sharedPref.getopensourceStatus()) {
+        if (!sharedPref.getopensourceStatus()) {
             startActivity(new Intent(HomeActivity.this, StartOpenSource.class));
-        }
-        else{
-            startActivity(new Intent(HomeActivity.this,OpenSourceActivity.class));
+        } else {
+            startActivity(new Intent(HomeActivity.this, OpenSourceActivity.class));
         }
     }
 
@@ -141,8 +140,7 @@ public class HomeActivity extends AppCompatActivity
         if (id == R.id.action_exit) {
             finish();
             return true;
-        }
-        else if(id == R.id.action_logout){
+        } else if (id == R.id.action_logout) {
             SharedPref sharedPref = new SharedPref(getApplicationContext());
 
             sharedPref.clearPrefOnLogout(getApplicationContext());
@@ -160,14 +158,14 @@ public class HomeActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_feed) {
-            startActivity(new Intent(HomeActivity.this,DashBoardActivity.class));
+            startActivity(new Intent(HomeActivity.this, DashBoardActivity.class));
         } else if (id == R.id.nav_repo) {
             startActivity(new Intent(HomeActivity.this, MyRepositories.class));
         } else if (id == R.id.nav_pr) {
-            startActivity(new Intent(HomeActivity.this,PullRequestsActivity.class));
+            startActivity(new Intent(HomeActivity.this, PullRequestsActivity.class));
         } else if (id == R.id.nav_star) {
             startActivity(new Intent(HomeActivity.this, StarredReposActivity.class));
-        }  else if (id == R.id.nav_feedback) {
+        } else if (id == R.id.nav_feedback) {
             Intent intent = new Intent(Intent.ACTION_SENDTO);
 
             String uriText = "mailto:" + Uri.encode("sudo-coders@gmail.com") + "?subject=" + Uri.encode("Reporting A Bug/Feedback") + "&body=" + Uri.encode("Hello, \nI want to report a bug/give feedback for FOSSmaster app.\n.....\n\n-Your name");
@@ -184,8 +182,8 @@ public class HomeActivity extends AppCompatActivity
             alertDialog2.show();
 
         } else if (id == R.id.nav_about) {
-            startActivity(new Intent(HomeActivity.this,AboutUSActivity.class));
-        } else if(id==R.id.nav_logout){
+            startActivity(new Intent(HomeActivity.this, AboutUSActivity.class));
+        } else if (id == R.id.nav_logout) {
             SharedPref sharedPref = new SharedPref(getApplicationContext());
 
             sharedPref.clearPrefOnLogout(getApplicationContext());
