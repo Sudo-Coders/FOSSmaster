@@ -23,7 +23,7 @@ import retrofit2.http.Query;
 
 public interface ApiInterface {
     @GET("myrepo/{username}")
-     Call<MyRepo2> getMyRepo(@Path("username") String username);
+    Call<MyRepo2> getMyRepo(@Path("username") String username);
 
     @GET("starred/{username}")
     Call<StarredRepos> getStarredRepos(@Path("username") String username);
@@ -36,14 +36,14 @@ public interface ApiInterface {
     Call<LoginModel> getLoginModel(@Field("username") String username, @Field("pswd") String pswd);
 
     @GET("myrepo/readme/{reponame}")
-    Call<ReadmeModel> getReadme(@Path("reponame") String reponame,@Query("username")String username);
+    Call<ReadmeModel> getReadme(@Path("reponame") String reponame, @Query("username") String username);
 
 //    @GET("dashboard/repo/{reponame}")
-  //  Call<>(@Query("username"))
+    //  Call<>(@Query("username"))
 
 //    @GET()
 
     @GET("suggested_repos/{language}")
-    Call<OpenSourceModel2> getOpenSource(@Path("language") String language,@Query("level") int level);
+    Call<OpenSourceModel2> getOpenSource(@Path("language") String language, @Query("level") int level);
 
 }

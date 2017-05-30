@@ -36,6 +36,7 @@ public class OpenSourceActivity extends AppCompatActivity {
     private Toolbar toolbar;
 
     ProgressBar progressBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,25 +60,20 @@ public class OpenSourceActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         progressBar.setVisibility(View.VISIBLE);
 
-        int level=1;
+        int level = 1;
 
-        if(sharedPref.getLevel().equals("Beginner Level")) {
+        if (sharedPref.getLevel().equals("Beginner Level")) {
             level = 1;
-        }
-
-        else if(sharedPref.getLevel().equals("Moderate Level")) {
+        } else if (sharedPref.getLevel().equals("Moderate Level")) {
             level = 2;
-        }
-
-        else if(sharedPref.getLevel().equals("Advanced Level")) {
+        } else if (sharedPref.getLevel().equals("Advanced Level")) {
             level = 3;
         }
 
-        getOpenSource(sharedPref.getLanguage(),level);
-        
+        getOpenSource(sharedPref.getLanguage(), level);
+
 
     }
-
 
 
     @Override
@@ -96,7 +92,7 @@ public class OpenSourceActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_change) {
-            startActivity(new Intent(OpenSourceActivity.this,StartOpenSource.class));
+            startActivity(new Intent(OpenSourceActivity.this, StartOpenSource.class));
             finish();
             return true;
         }
@@ -105,18 +101,15 @@ public class OpenSourceActivity extends AppCompatActivity {
     }
 
 
-
-
-
-    void getOpenSource(String language,int l){
+    void getOpenSource(String language, int l) {
         ApiInterface mApi = Util.getRetrofitService();
-        Call<OpenSourceModel2> mservice = mApi.getOpenSource(language,l);
+        Call<OpenSourceModel2> mservice = mApi.getOpenSource(language, l);
         System.out.println("help me");
         mservice.enqueue(new Callback<OpenSourceModel2>() {
 
             @Override
             public void onResponse(Call<OpenSourceModel2> call, Response<OpenSourceModel2> response) {
-                if(response!=null && response.isSuccess()) {
+                if (response != null && response.isSuccess()) {
                     users = response.body().getUsers();
 
                     progressBar.setVisibility(View.GONE);
@@ -124,8 +117,7 @@ public class OpenSourceActivity extends AppCompatActivity {
 
                     recyclerView.setAdapter(adapter);
 
-                }
-                else{
+                } else {
                     Toast.makeText(OpenSourceActivity.this, "Some Problem is there", Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.GONE);
                 }
@@ -138,7 +130,6 @@ public class OpenSourceActivity extends AppCompatActivity {
             }
         });
     }
-    
-    
-    
+
+
 }

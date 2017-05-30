@@ -31,7 +31,7 @@ public class StartOpenSource extends AppCompatActivity {
 
     public void addListenerOnButton() {
 
-        radioGroup  = (RadioGroup) findViewById(R.id.selectLang);
+        radioGroup = (RadioGroup) findViewById(R.id.selectLang);
         next = (Button) findViewById(R.id.nextBtn);
 
         next.setOnClickListener(new View.OnClickListener() {
@@ -48,7 +48,7 @@ public class StartOpenSource extends AppCompatActivity {
                 sharedPref.setLanguage(next.getText().toString());
                 // STOPSHIP: 2/4/17
                 sharedPref.setOpensourceStatus(true);
-                startActivity(new Intent(StartOpenSource.this,SelectDifficulty.class));
+                startActivity(new Intent(StartOpenSource.this, SelectDifficulty.class));
                 finish();
                 System.out.println(sharedPref.getLanguage());
                 Toast.makeText(StartOpenSource.this,
@@ -59,8 +59,6 @@ public class StartOpenSource extends AppCompatActivity {
         });
 
     }
-
-
 
 
 }

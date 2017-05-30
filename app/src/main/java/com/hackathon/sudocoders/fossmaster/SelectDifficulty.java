@@ -20,14 +20,14 @@ public class SelectDifficulty extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_difficulty);
-        radioGroup  = (RadioGroup) findViewById(R.id.selectDifc);
+        radioGroup = (RadioGroup) findViewById(R.id.selectDifc);
         addListenerOnButton();
     }
 
     @Override
-    public void onBackPressed(){
+    public void onBackPressed() {
         super.onBackPressed();
-        startActivity(new Intent(SelectDifficulty.this,StartOpenSource.class));
+        startActivity(new Intent(SelectDifficulty.this, StartOpenSource.class));
     }
 
 
@@ -47,7 +47,7 @@ public class SelectDifficulty extends AppCompatActivity {
                 // find the radiobutton by returned id
                 next = (RadioButton) findViewById(selectedId);
                 sharedPref.setLevel(next.getText().toString());
-                startActivity(new Intent(SelectDifficulty.this,OpenSourceActivity.class));
+                startActivity(new Intent(SelectDifficulty.this, OpenSourceActivity.class));
                 finish();
                 Toast.makeText(SelectDifficulty.this,
                         next.getText() + " is selected", Toast.LENGTH_SHORT).show();

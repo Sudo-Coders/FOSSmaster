@@ -33,6 +33,7 @@ public class DashBoardActivity extends AppCompatActivity {
     private Toolbar toolbar;
     ProgressBar progressBar;
     private ArrayList<DashboardUserDetail> users;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,14 +63,14 @@ public class DashBoardActivity extends AppCompatActivity {
     }
 
 
-    public void getDashboard(String username){
+    public void getDashboard(String username) {
         ApiInterface mApi = Util.getRetrofitService();
         Call<Dashboard> mservice = mApi.getDashboard(username);
         mservice.enqueue(new Callback<Dashboard>() {
 
             @Override
             public void onResponse(Call<Dashboard> call, Response<Dashboard> response) {
-                if(response!=null && response.isSuccess()) {
+                if (response != null && response.isSuccess()) {
                     users = response.body().getFeed();
 
                     progressBar.setVisibility(View.GONE);
@@ -77,8 +78,7 @@ public class DashBoardActivity extends AppCompatActivity {
 
                     recyclerView.setAdapter(adapter);
 
-                }
-                else{
+                } else {
                     Toast.makeText(DashBoardActivity.this, "Some Problem is there", Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.GONE);
                 }
@@ -92,8 +92,6 @@ public class DashBoardActivity extends AppCompatActivity {
         });
 
     }
-
-
 
 
 }

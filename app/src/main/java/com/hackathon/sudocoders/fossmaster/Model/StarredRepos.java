@@ -15,7 +15,7 @@ public class StarredRepos {
     @SerializedName("response")
     private ArrayList<StarredReposDetails> users;
 
-    public StarredRepos(ArrayList<StarredReposDetails> users,boolean success) {
+    public StarredRepos(ArrayList<StarredReposDetails> users, boolean success) {
         this.users = users;
         this.success = success;
     }

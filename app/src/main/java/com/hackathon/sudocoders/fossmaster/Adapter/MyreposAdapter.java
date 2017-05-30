@@ -28,7 +28,7 @@ import java.util.ArrayList;
  * Created by jatin on 31/3/17.
  */
 
-public class MyreposAdapter extends RecyclerView.Adapter<MyreposAdapter.MyRepoViewHolder>{
+public class MyreposAdapter extends RecyclerView.Adapter<MyreposAdapter.MyRepoViewHolder> {
 
 
     private final ArrayList<MyRepo> users;
@@ -42,22 +42,21 @@ public class MyreposAdapter extends RecyclerView.Adapter<MyreposAdapter.MyRepoVi
     }
 
 
-
     @Override
     public MyRepoViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view_repos,parent,false);
-        MyRepoViewHolder mrv = new MyRepoViewHolder(v,users,context);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view_repos, parent, false);
+        MyRepoViewHolder mrv = new MyRepoViewHolder(v, users, context);
         return mrv;
     }
 
     @Override
     public void onBindViewHolder(MyRepoViewHolder holder, int position) {
         final SharedPref sharedPref = new SharedPref(context);
-       final MyRepo user = users.get(position);
+        final MyRepo user = users.get(position);
         holder.no_stars.setText(user.getStars());
         holder.fork_total.setText(user.getNo_forks());
         holder.desc.setText(user.getDesc());
-        if(user.getDesc()==null){
+        if (user.getDesc() == null) {
             holder.desc.setText("<No Description>");
         }
         holder.name.setText(user.getName());
@@ -78,83 +77,81 @@ public class MyreposAdapter extends RecyclerView.Adapter<MyreposAdapter.MyRepoVi
         String lang_name = user.getLanguage();
         Resources resources = context.getResources();
         Drawable d;
-        if (user.getLanguage()== null) {
+        if (user.getLanguage() == null) {
             holder.language_icon.setVisibility(View.GONE);
             holder.language.setVisibility(View.GONE);
-        }
-        else{
+        } else {
             switch (lang_name) {
                 case "C":
-                    d= resources.getDrawable(R.drawable.shape_oval_c);
+                    d = resources.getDrawable(R.drawable.shape_oval_c);
                     break;
                 case "Ruby":
-                    d= resources.getDrawable(R.drawable.shape_oval_ruby);
+                    d = resources.getDrawable(R.drawable.shape_oval_ruby);
                     break;
                 case "JavaScript":
-                    d =resources.getDrawable(R.drawable.shape_oval_javascript);
+                    d = resources.getDrawable(R.drawable.shape_oval_javascript);
                     break;
                 case "Swift":
-                    d= resources.getDrawable(R.drawable.shape_oval_swift);
+                    d = resources.getDrawable(R.drawable.shape_oval_swift);
                     break;
                 case "C#":
-                    d= resources.getDrawable(R.drawable.shape_oval_objective_c);
+                    d = resources.getDrawable(R.drawable.shape_oval_objective_c);
                     break;
                 case "C++":
-                    d= resources.getDrawable(R.drawable.shape_oval_c_plus);
+                    d = resources.getDrawable(R.drawable.shape_oval_c_plus);
                     break;
                 case "Python":
-                    d= resources.getDrawable(R.drawable.shape_oval_python);
+                    d = resources.getDrawable(R.drawable.shape_oval_python);
                     break;
                 case "C1":
-                    d= resources.getDrawable(R.drawable.shape_oval_c_sharp);
+                    d = resources.getDrawable(R.drawable.shape_oval_c_sharp);
                     break;
                 case "HTML":
-                    d =  resources.getDrawable(R.drawable.shape_oval_html);
+                    d = resources.getDrawable(R.drawable.shape_oval_html);
                     break;
                 case "Java":
-                    d =  resources.getDrawable(R.drawable.shape_oval_java);
+                    d = resources.getDrawable(R.drawable.shape_oval_java);
                     break;
                 case "Kotlin":
-                    d =  resources.getDrawable(R.drawable.shape_oval_kotlin);
+                    d = resources.getDrawable(R.drawable.shape_oval_kotlin);
                     break;
                 case "Go":
-                    d =  resources.getDrawable(R.drawable.shape_oval_go);
+                    d = resources.getDrawable(R.drawable.shape_oval_go);
                     break;
                 case "Lua":
-                    d =  resources.getDrawable(R.drawable.shape_oval_lua);
+                    d = resources.getDrawable(R.drawable.shape_oval_lua);
                     break;
                 case "Matlab":
-                    d =  resources.getDrawable(R.drawable.shape_oval_matlab);
+                    d = resources.getDrawable(R.drawable.shape_oval_matlab);
                     break;
                 case "Pascal":
-                    d =  resources.getDrawable(R.drawable.shape_oval_pascal);
+                    d = resources.getDrawable(R.drawable.shape_oval_pascal);
                     break;
                 case "Perl":
-                    d =  resources.getDrawable(R.drawable.shape_oval_perl);
+                    d = resources.getDrawable(R.drawable.shape_oval_perl);
                     break;
                 case "PHP":
-                    d =  resources.getDrawable(R.drawable.shape_oval_php);
+                    d = resources.getDrawable(R.drawable.shape_oval_php);
                     break;
                 case "R":
-                    d =  resources.getDrawable(R.drawable.shape_oval_r);
+                    d = resources.getDrawable(R.drawable.shape_oval_r);
                     break;
                 case "Scala":
-                    d =  resources.getDrawable(R.drawable.shape_oval_scala);
+                    d = resources.getDrawable(R.drawable.shape_oval_scala);
                     break;
                 case "ASP":
-                    d =  resources.getDrawable(R.drawable.shape_oval_asp);
+                    d = resources.getDrawable(R.drawable.shape_oval_asp);
                     break;
                 case "CSS":
-                    d =  resources.getDrawable(R.drawable.shape_oval_css);
+                    d = resources.getDrawable(R.drawable.shape_oval_css);
                     break;
 
                 default:
-                    d =  resources.getDrawable(R.drawable.shape_oval_default);
+                    d = resources.getDrawable(R.drawable.shape_oval_default);
 
             }
             holder.language_icon.setBackground(d);
         }
-
 
 
     }
@@ -174,16 +171,16 @@ public class MyreposAdapter extends RecyclerView.Adapter<MyreposAdapter.MyRepoVi
         TextView language;
         ImageView language_icon;
 
-        public MyRepoViewHolder(View itemView, ArrayList<MyRepo> users,Context context) {
+        public MyRepoViewHolder(View itemView, ArrayList<MyRepo> users, Context context) {
             super(itemView);
             repo_card = (CardView) itemView.findViewById(R.id.repo_card);
-            no_stars = (TextView)itemView.findViewById(R.id.stars_total);
-            star = (ImageView)itemView.findViewById(R.id.star);
-            fork_total = (TextView)itemView.findViewById(R.id.forks_total);
-            desc = (TextView)itemView.findViewById(R.id.subtitle);
-            name = (TextView)itemView.findViewById(R.id.title);
-            language = (TextView)itemView.findViewById(R.id.language);
-            language_icon = (ImageView)itemView.findViewById(R.id.language_icon);
+            no_stars = (TextView) itemView.findViewById(R.id.stars_total);
+            star = (ImageView) itemView.findViewById(R.id.star);
+            fork_total = (TextView) itemView.findViewById(R.id.forks_total);
+            desc = (TextView) itemView.findViewById(R.id.subtitle);
+            name = (TextView) itemView.findViewById(R.id.title);
+            language = (TextView) itemView.findViewById(R.id.language);
+            language_icon = (ImageView) itemView.findViewById(R.id.language_icon);
         }
     }
 }

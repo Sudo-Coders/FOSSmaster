@@ -68,24 +68,23 @@ public class InsideRepoActivity extends AppCompatActivity {
         SharedPref sharedPref = new SharedPref(getApplicationContext());
         String uname = sharedPref.getUserName();
         String repname = sharedPref.getreponame();
-        getReadme(sharedPref.getreponame(),sharedPref.getUserName());
+        getReadme(sharedPref.getreponame(), sharedPref.getUserName());
 
     }
 
 
-    public void getReadme(String reponame, String username){
+    public void getReadme(String reponame, String username) {
 
         ApiInterface mApi = Util.getRetrofitService();
-        Call<ReadmeModel> mservice = mApi.getReadme(reponame,username);
+        Call<ReadmeModel> mservice = mApi.getReadme(reponame, username);
 
         mservice.enqueue(new Callback<ReadmeModel>() {
             @Override
             public void onResponse(Call<ReadmeModel> call, Response<ReadmeModel> response) {
-                if(response!=null && response.isSuccess()){
-                   if(response.body().getReadme().equals("")) {
+                if (response != null && response.isSuccess()) {
+                    if (response.body().getReadme().equals("")) {
                         readme.setText("No readme for this repo");
-                    }
-                    else {
+                    } else {
                         readme.setText(response.body().getReadme());
 
                     }
@@ -100,8 +99,7 @@ public class InsideRepoActivity extends AppCompatActivity {
                     cardInfo.setVisibility(View.VISIBLE);
                     cardReadme.setVisibility(View.VISIBLE);
                     progressBar.setVisibility(View.GONE);
-                }
-                else{
+                } else {
                     Toast.makeText(InsideRepoActivity.this, "Some Problem is there", Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.GONE);
                 }
@@ -115,7 +113,7 @@ public class InsideRepoActivity extends AppCompatActivity {
         });
     }
 
-    public void openLink(View v){
+    public void openLink(View v) {
         Intent launchBrowser = new Intent(Intent.ACTION_VIEW);
         launchBrowser.setData(Uri.parse(url.getText().toString()));
         startActivity(launchBrowser);

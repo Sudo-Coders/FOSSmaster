@@ -30,6 +30,7 @@ public class MyRepositories extends AppCompatActivity {
     private LinearLayoutManager layoutManager;
     private Toolbar toolbar;
     ProgressBar progressBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,10 +56,9 @@ public class MyRepositories extends AppCompatActivity {
         getMyRepo(sharedPref.getUserName());
 
 
-
     }
 
-    public void getMyRepo(String username){
+    public void getMyRepo(String username) {
 
         ApiInterface mApi = Util.getRetrofitService();
         Call<MyRepo2> mservice = mApi.getMyRepo(username);
@@ -67,7 +67,7 @@ public class MyRepositories extends AppCompatActivity {
 
             @Override
             public void onResponse(Call<MyRepo2> call, Response<MyRepo2> response) {
-                if(response!=null && response.isSuccess()) {
+                if (response != null && response.isSuccess()) {
                     users = response.body().getUsers();
 
                     progressBar.setVisibility(View.GONE);
@@ -75,8 +75,7 @@ public class MyRepositories extends AppCompatActivity {
 
                     recyclerView.setAdapter(adapter);
 
-                }
-                else{
+                } else {
                     Toast.makeText(MyRepositories.this, "Some Problem is there", Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.GONE);
                 }
@@ -90,7 +89,6 @@ public class MyRepositories extends AppCompatActivity {
         });
 
     }
-
 
 
 }
