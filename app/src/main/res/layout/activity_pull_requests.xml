@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/pr_toolbar"
@@ -12,17 +12,16 @@
         android:background="@color/colorPrimary"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         android:titleTextColor="#FFF"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        />
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="New Feature\n\nCOMING SOON"
-        android:textSize="25dp"
-        android:layout_marginTop="50dp"
         android:layout_gravity="center"
-        android:gravity="center"/>
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:text="New Feature\n\nCOMING SOON"
+        android:textSize="25dp" />
 
 </LinearLayout>
