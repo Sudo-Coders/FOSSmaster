@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/repo_card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:elevation="10dp"
-    android:id="@+id/repo_card"
-    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
     android:layout_marginLeft="6dp"
     android:layout_marginRight="6dp"
-    android:layout_marginBottom="4dp">
+    android:layout_marginTop="4dp"
+    android:elevation="10dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,37 +19,37 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="5dp">
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
 
             <TextView
-                android:ellipsize="end"
                 android:id="@+id/title"
-                android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:maxLines="2"
-                android:text="Default"
-                android:textSize="20dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="8dp"
-                android:textColor="@android:color/black"
+                android:ellipsize="end"
+                android:maxLines="2"
                 android:paddingBottom="5dp"
-                android:paddingTop="5dp" />
+                android:paddingTop="5dp"
+                android:text="Default"
+                android:textColor="@android:color/black"
+                android:textSize="20dp" />
 
             <TextView
-                android:textStyle="italic"
-                android:textSize="16dp"
-                android:ellipsize="end"
                 android:id="@+id/subtitle"
-                android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:maxLines="2"
-                android:text="Default"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="8dp"
-                android:layout_gravity="center_vertical"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:paddingBottom="9dp"
                 android:paddingTop="8dp"
-                android:paddingBottom="9dp" />
+                android:text="Default"
+                android:textSize="16dp"
+                android:textStyle="italic" />
 
         </LinearLayout>
 
@@ -57,9 +57,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="21dp"
             android:layout_marginTop="7px"
-            android:paddingBottom="9dp"
-            android:layout_marginLeft="21dp">
+            android:paddingBottom="9dp">
 
 
             <de.hdodenhof.circleimageview.CircleImageView
@@ -77,24 +77,23 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
-                android:textSize="16dp"
                 android:paddingEnd="4dp"
                 android:paddingLeft="4dp"
                 android:paddingRight="4dp"
                 android:paddingStart="4dp"
-                android:textColor="@android:color/black" />
+                android:textColor="@android:color/black"
+                android:textSize="16dp" />
 
             <ImageView
+                android:id="@+id/star"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:src="@drawable/ic_star_grey_20dp"
-                android:id="@+id/star"
                 tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/stars_total"
-                android:textSize="16dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -102,7 +101,8 @@
                 android:paddingLeft="4dp"
                 android:paddingRight="4dp"
                 android:paddingStart="4dp"
-                android:textColor="@android:color/black" />
+                android:textColor="@android:color/black"
+                android:textSize="16dp" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -115,7 +115,6 @@
 
             <TextView
                 android:id="@+id/forks_total"
-                android:textSize="16dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -123,7 +122,8 @@
                 android:paddingLeft="4dp"
                 android:paddingRight="4dp"
                 android:paddingStart="4dp"
-                android:textColor="@android:color/black" />
+                android:textColor="@android:color/black"
+                android:textSize="16dp" />
 
         </LinearLayout>
 

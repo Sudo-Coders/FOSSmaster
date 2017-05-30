@@ -1,31 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_height="match_parent"
-    android:layout_width="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:padding="16dp">
 
-    <ScrollView android:layout_width="match_parent"
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_marginTop="?attr/actionBarSize">
+            android:layout_marginTop="?attr/actionBarSize"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="center">
+                android:layout_gravity="center"
+                android:orientation="horizontal">
 
                 <android.support.v7.widget.CardView
                     android:layout_width="150dp"
                     android:layout_height="150dp"
+                    android:onClick="getFeed"
                     app:cardCornerRadius="10dp"
-                    app:cardElevation="4dp"
-                    android:onClick="getFeed">
+                    app:cardElevation="4dp">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -37,17 +38,17 @@
                             android:id="@+id/feed_img"
                             android:layout_width="wrap_content"
                             android:layout_height="80dp"
-                            android:layout_marginTop="15dp"
                             android:layout_marginBottom="8dp"
-                            android:src="@drawable/curr_feed"/>
+                            android:layout_marginTop="15dp"
+                            android:src="@drawable/curr_feed" />
 
                         <TextView
-                            android:gravity="center"
-                            android:layout_below="@id/feed_img"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_below="@id/feed_img"
+                            android:gravity="center"
                             android:text="Current Feed"
-                            android:textColor="#ffffff"/>
+                            android:textColor="#ffffff" />
 
 
                     </RelativeLayout>
@@ -58,31 +59,31 @@
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:layout_marginStart="20dp"
+                    android:onClick="getMyrepo"
                     app:cardCornerRadius="10dp"
-                    app:cardElevation="8dp"
-                    android:onClick="getMyrepo">
+                    app:cardElevation="8dp">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:padding="10dp"
-                        android:background="#4d4c4c">
+                        android:background="#4d4c4c"
+                        android:padding="10dp">
 
                         <ImageView
                             android:id="@+id/myrep_img"
                             android:layout_width="wrap_content"
                             android:layout_height="90dp"
-                            android:src="@drawable/my_repo"
-                            android:layout_marginBottom="5dp"/>
+                            android:layout_marginBottom="5dp"
+                            android:src="@drawable/my_repo" />
 
                         <TextView
-                            android:layout_marginTop="6dp"
-                            android:gravity="center"
-                            android:layout_below="@id/myrep_img"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_below="@id/myrep_img"
+                            android:layout_marginTop="6dp"
+                            android:gravity="center"
                             android:text="My Repositories"
-                            android:textColor="#fff"/>
+                            android:textColor="#fff" />
 
 
                     </RelativeLayout>
@@ -92,20 +93,19 @@
             </LinearLayout>
 
 
-
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
 
                 <android.support.v7.widget.CardView
                     android:layout_width="150dp"
                     android:layout_height="150dp"
+                    android:onClick="getMypr"
                     app:cardCornerRadius="10dp"
-                    app:cardElevation="4dp"
-                    android:onClick="getMypr">
+                    app:cardElevation="4dp">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -117,17 +117,17 @@
                             android:id="@+id/pr_img"
                             android:layout_width="wrap_content"
                             android:layout_height="80dp"
-                            android:layout_marginTop="15dp"
                             android:layout_marginBottom="8dp"
-                            android:src="@drawable/my_pr"/>
+                            android:layout_marginTop="15dp"
+                            android:src="@drawable/my_pr" />
 
                         <TextView
-                            android:gravity="center"
-                            android:layout_below="@id/pr_img"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_below="@id/pr_img"
+                            android:gravity="center"
                             android:text="My Pull Requests"
-                            android:textColor="#ffffff"/>
+                            android:textColor="#ffffff" />
 
 
                     </RelativeLayout>
@@ -138,9 +138,9 @@
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:layout_marginStart="20dp"
+                    android:onClick="getStars"
                     app:cardCornerRadius="10dp"
-                    app:cardElevation="4dp"
-                    android:onClick="getStars">
+                    app:cardElevation="4dp">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -152,16 +152,16 @@
                             android:id="@+id/starred_img"
                             android:layout_width="wrap_content"
                             android:layout_height="100dp"
-                            android:src="@drawable/starred"/>
+                            android:src="@drawable/starred" />
 
                         <TextView
-                            android:layout_marginTop="2dp"
-                            android:gravity="center"
-                            android:layout_below="@id/starred_img"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_below="@id/starred_img"
+                            android:layout_marginTop="2dp"
+                            android:gravity="center"
                             android:text="Starred Repos"
-                            android:textColor="#ffffff"/>
+                            android:textColor="#ffffff" />
 
 
                     </RelativeLayout>
@@ -173,11 +173,11 @@
             <android.support.v7.widget.CardView
                 android:layout_width="320dp"
                 android:layout_height="150dp"
-                android:layout_marginTop="20dp"
                 android:layout_gravity="center"
-                app:cardElevation="4dp"
+                android:layout_marginTop="20dp"
+                android:onClick="startOS"
                 app:cardCornerRadius="10dp"
-                android:onClick="startOS">
+                app:cardElevation="4dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -188,42 +188,39 @@
                         android:id="@+id/img_ll"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center_horizontal">
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_marginTop="5dp"
-                            android:src="@drawable/os"
                             android:layout_width="100dp"
                             android:layout_height="100dp"
-                            android:layout_marginRight="20dp"/>
+                            android:layout_marginRight="20dp"
+                            android:layout_marginTop="5dp"
+                            android:src="@drawable/os" />
 
                         <ImageView
-                            android:src="@drawable/gh"
-                            android:layout_marginTop="15dp"
-                            android:layout_marginLeft="20dp"
                             android:layout_width="80dp"
-                            android:layout_height="80dp" />
+                            android:layout_height="80dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="15dp"
+                            android:src="@drawable/gh" />
 
                     </LinearLayout>
 
                     <TextView
-                        android:layout_below="@id/img_ll"
-                        android:text="Start contributing to Open Source"
-                        android:layout_marginTop="2dp"
-                        android:textColor="#ffffff"
-                        android:gravity="center"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"/>
-
+                        android:layout_below="@id/img_ll"
+                        android:layout_marginTop="2dp"
+                        android:gravity="center"
+                        android:text="Start contributing to Open Source"
+                        android:textColor="#ffffff"
+                        android:textSize="20dp" />
 
 
                 </RelativeLayout>
 
             </android.support.v7.widget.CardView>
-
-
 
 
         </LinearLayout>
