@@ -15,211 +15,207 @@
         android:titleTextColor="#FFF"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         />
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-    <android.support.v7.widget.CardView
-        android:id="@+id/card_info"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:elevation="10dp"
-        android:padding="6dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginLeft="6dp"
-        android:layout_marginRight="6dp"
-        android:layout_marginBottom="4dp"
-        >
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp"
-            >
-
-            <TextView
-                style="@style/TextAppearance.AppCompat.Medium"
-                android:ellipsize="end"
-                android:id="@+id/title"
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:maxLines="2"
-                android:text="Default"
-                android:textColor="@android:color/black"
-                android:paddingBottom="9dp"
-                android:paddingTop="9dp"
-                />
-
-            <TextView
-                style="@style/TextAppearance.AppCompat.Small"
-                android:ellipsize="end"
-                android:id="@+id/subtitle"
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:maxLines="2"
-                android:text="default"
-                android:layout_gravity="center_vertical"
-                android:paddingTop="8dp"
-                android:textColor="@android:color/black"
-                android:paddingBottom="9dp"
-                />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="url"
-                android:id="@+id/url"
-                android:textSize="20dp"
-                android:textStyle="italic"
-                android:onClick="openLink"
-                />
-
-        </LinearLayout>
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="7px"
-            android:paddingBottom="13dp"
-            android:layout_marginLeft="21dp"
-            >
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/language_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
+            android:orientation="vertical">
 
-
-
-
-                android:background="@drawable/shape_oval_c"
-
-                tools:ignore="ContentDescription,RtlHardcoded" />
-
-            <TextView
-                android:id="@+id/language"
-                style="@style/TextAppearance.AppCompat.Small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
-                android:paddingEnd="4dp"
-                android:paddingLeft="4dp"
-                android:paddingRight="4dp"
-                android:paddingStart="4dp"
-                android:textColor="@android:color/black" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:src="@drawable/ic_star_grey_20dp"
-                android:id="@+id/star"
-                tools:ignore="ContentDescription" />
-
-            <TextView
-                android:id="@+id/stars_total"
-                style="@style/TextAppearance.AppCompat.Small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:paddingEnd="4dp"
-                android:paddingLeft="4dp"
-                android:paddingRight="4dp"
-                android:paddingStart="4dp"
-                android:textColor="@android:color/black" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="16dp"
-                android:layout_marginStart="16dp"
-                android:src="@drawable/ic_code_fork_symbol_grey"
-                tools:ignore="ContentDescription" />
-
-            <TextView
-                android:id="@+id/forks_total"
-                style="@style/TextAppearance.AppCompat.Small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:paddingEnd="4dp"
-                android:paddingLeft="4dp"
-                android:paddingRight="4dp"
-                android:paddingStart="4dp"
-                android:textColor="@android:color/black" />
-        </LinearLayout>
-
-        </LinearLayout>
-    </android.support.v7.widget.CardView>
-
-
-    <android.support.v7.widget.CardView
-        android:id="@+id/card_readme"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:elevation="10dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginLeft="6dp"
-        android:layout_marginRight="6dp"
-        android:layout_marginBottom="4dp">
-
-
-        <LinearLayout
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:elevation="10dp"
+            android:padding="6dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginBottom="4dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="16dp"
-                android:text="Read Me File"
-                android:layout_marginBottom="10dp"
-                android:textStyle="bold"
-                android:id="@+id/repodetail"
-                android:textColor="@color/colorPrimaryDark"
-                />
-
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/reporeadme"
-                android:text="No Read Me found"
-                android:textSize="20dp"
-                />
+                android:orientation="vertical">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:ellipsize="end"
+                    android:id="@+id/title"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:maxLines="2"
+                    android:text="Default"
+                    android:textColor="@android:color/black"
+                    android:paddingBottom="9dp"
+                    android:paddingTop="9dp"
+                    />
+
+                <TextView
+                    android:textSize="15dp"
+                    android:ellipsize="end"
+                    android:id="@+id/subtitle"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:maxLines="2"
+                    android:text="default"
+                    android:layout_gravity="center_vertical"
+                    android:paddingTop="8dp"
+                    android:textColor="@android:color/black"
+                    android:paddingBottom="9dp" />
+
+
+                <TextView
+                    android:layout_marginTop="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="url"
+                    android:id="@+id/url"
+                    android:textSize="16dp"
+                    android:textColor="#2659a1"
+                    android:textStyle="italic"
+                    android:onClick="openLink" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7px"
+                android:paddingBottom="13dp"
+                android:layout_marginLeft="21dp">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/language_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/shape_oval_c"
+                    tools:ignore="ContentDescription,RtlHardcoded" />
+
+
+                <TextView
+                    android:id="@+id/language"
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:paddingEnd="4dp"
+                    android:paddingLeft="4dp"
+                    android:paddingRight="4dp"
+                    android:paddingStart="4dp"
+                    android:textColor="@android:color/black" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_star_grey_20dp"
+                    android:id="@+id/star"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/stars_total"
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:paddingEnd="4dp"
+                    android:paddingLeft="4dp"
+                    android:paddingRight="4dp"
+                    android:paddingStart="4dp"
+                    android:textColor="@android:color/black" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:src="@drawable/ic_code_fork_symbol_grey"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/forks_total"
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:paddingEnd="4dp"
+                    android:paddingLeft="4dp"
+                    android:paddingRight="4dp"
+                    android:paddingStart="4dp"
+                    android:textColor="@android:color/black" />
+            </LinearLayout>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_readme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="10dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginBottom="4dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:text="Read Me File"
+                    android:layout_marginBottom="15dp"
+                    android:textStyle="bold"
+                    android:id="@+id/repodetail"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/reporeadme"
+                    android:text="No Read Me found"
+                    android:textSize="17dp" />
+
+            </LinearLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+        <ProgressBar
+            android:id="@+id/progress"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
 
 
         </LinearLayout>
 
-
-
-
-
-    </android.support.v7.widget.CardView>
-
-    <ProgressBar
-        android:id="@+id/progress"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:visibility="gone"/>
-
-
-
-</LinearLayout>
     </ScrollView>
+
 </LinearLayout>
