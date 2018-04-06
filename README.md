@@ -6,3 +6,5 @@ FOSSmaster is an app that helps you get started with the Open Source World. You 
 Very soon we would be adding many new features..... So stay tuned and contribute to Open Source.
 
 Any new suggestions and improvements are welcomed..!!!
+
+The algorithm used to implement cluster repos into tough medium and hard of repos is using machine learning unsupervide learning Knn cluster.
